@@ -20,7 +20,7 @@
 	<nav id="primary">
 	    <div class="boxed">
 	        <div id="logo">
-	           <a href="//laravel.com"><img src="assets/logo-head.png" alt="Laravel"></a>
+	           <a href="//laravel.com"><img src="{{ asset('assets/logo-head.png') }}" alt="Laravel"></a>
 	        </div>
             <ul>
             	<li><a href="http://laravel.com">Inicio</a></li>
@@ -33,11 +33,14 @@
         </div>
     </nav>
 	<div class="boxed">
-		<div class="one_third">
-			{{ $documentation }}
-		</div>
-		<div class="two_third">
-			<div ng-view></div>
+		<div id="wrapper">
+			<div class="one_third">
+				{{ $documentation }}
+			</div>
+			<div class="two_third">
+				<div ng-view>
+                </div>
+			</div>
 		</div>
 	</div>
 </body>
