@@ -1,0 +1,24 @@
+nav#primary {
+	background: #ffffff;
+	width: 100%;
+	float: left;
+	position: relative;
+	z-index: 999;
+	border-bottom: 1px solid #e5e5e5;
+	box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.03);
+}
+
+#logo {
+	float: left;
+	padding-top: 21px;
+	-webkit-transition: 250ms linear all;
+	-moz-transition: 250ms linear all;
+	transition: 250ms linear all;
+}
+
+nav#primary ul li {
+	margin: auto 15px;
+	display: inline;
+	padding: 25px 0;
+	float: left;
+}
