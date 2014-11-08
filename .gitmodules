@@ -1,6 +1,3 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/montogeek/laravel-docs-es
-[submodule "public/Workless"]
-	path = public/Workless
-	url = https://github.com/iKreativ/Workless
