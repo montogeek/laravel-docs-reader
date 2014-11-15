@@ -56,6 +56,8 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     }))
     .pipe(assets = $.useref.assets())
     .pipe($.rev())
+    .pipe(gulp.dest('dist'))
+    .pipe($.rev.manifest())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))

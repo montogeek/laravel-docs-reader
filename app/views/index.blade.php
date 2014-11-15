@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Documentación de Laravel en Español versión 4.1</title>
-	{{ HTML::style('Workless/assets/css/styles.css') }}
-	{{ HTML::style('css/styles.css') }}
+  <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/vendor.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/app.css') }}">
 	{{ HTML::script('js/bower_components/angular/angular.js') }}
 	{{ HTML::script('js/bower_components/angular-route/angular-route.js') }}
 	{{ HTML::script('js/bower_components/angular-resource/angular-resource.js') }}
