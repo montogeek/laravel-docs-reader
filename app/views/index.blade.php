@@ -5,16 +5,8 @@
 	<title>Documentación de Laravel en Español versión 4.1</title>
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/vendor.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/app.css') }}">
-	{{ HTML::script('js/bower_components/angular/angular.js') }}
-	{{ HTML::script('js/bower_components/angular-route/angular-route.js') }}
-	{{ HTML::script('js/bower_components/angular-resource/angular-resource.js') }}
-	<script>
-		var app = '{{ url() }}' + '/js/docsApp/';
-	</script>
-	<!-- App -->
-	{{ HTML::script('js/docsApp/app.js') }}
-	{{ HTML::script('js/docsApp/controller.js') }}
-	{{ HTML::script('js/docsApp/service.js') }}
+  <script type="text/javascript" src="{{ asset_path('scripts/vendor.js') }}"></script>
+  <script type="text/javascript" src="{{ asset_path('scripts/app.js') }}"></script>
 </head>
 <body>
 	<nav id="primary">
