@@ -1,0 +1,33 @@
+{
+  "name": "laravel-docs-reader",
+  "version": "1.0.0",
+  "description": "Lector de la documentación de Laravel en Español",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "foundation": "^4.2.1-1",
+    "gulp-gzip": "0.0.8",
+    "gulp-livereload": "^3.0.2",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-rev": "^2.0.1",
+    "gulp-sass": "^1.2.4",
+    "gulp-watch": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/montogeek/laravel-docs-reader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/montogeek/laravel-docs-reader/issues"
+  },
+  "homepage": "https://github.com/montogeek/laravel-docs-reader"
+}

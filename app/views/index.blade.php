@@ -1,10 +1,11 @@
+{{ asset_path('styles/main.css') }}
 <!doctype html>
 <html lang="es" ng-app="docsApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Documentación de Laravel en Español versión 4.1</title>
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/vendor.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/app.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}">
   <script type="text/javascript" src="{{ asset_path('scripts/vendor.js') }}"></script>
   <script type="text/javascript" src="{{ asset_path('scripts/app.js') }}"></script>
 </head>
