@@ -7,7 +7,7 @@
  * @return string
  */
 function asset_path($filename) {
-    $manifest_path = public_path().'/styles/rev-manifest.json';
+    $manifest_path = public_path().'/rev-manifest.json';
 
     if (file_exists($manifest_path)) {
         $manifest = json_decode(file_get_contents($manifest_path), TRUE);
@@ -16,7 +16,7 @@ function asset_path($filename) {
     }
 
     if (array_key_exists($filename, $manifest)) {
-        return '/public/' . $manifest[$filename];
+        return $manifest[$filename];
     }
 
     return $filename;

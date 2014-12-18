@@ -1,4 +1,3 @@
-{{ asset_path('styles/main.css') }}
 <!doctype html>
 <html lang="es" ng-app="docsApp">
 <head>
@@ -25,15 +24,13 @@
             </ul>
         </div>
     </nav>
-	<div class="boxed">
-		<div id="wrapper">
-			<div class="one_third">
-				{{ $documentation }}
-			</div>
-			<div class="two_third">
-				<div ng-view>
-                </div>
-			</div>
+	<div class="row">
+		<div class="columns large-3">
+			{{ $documentation }}
+		</div>
+		<div class="columns large-9">
+			<div ng-view>
+              </div>
 		</div>
 	</div>
 </body>
