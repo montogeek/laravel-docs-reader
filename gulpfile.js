@@ -1,43 +1,67 @@
 var gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  watch = require('gulp-watch'),
-  minifycss = require('gulp-minify-css'),
-  rename = require('gulp-rename'),
-  livereload = require('gulp-livereload'),
-  rev = require('gulp-rev'),
-  clean = require('gulp-clean'),
-  path = require('path'),
+    sass = require('gulp-sass'),
+    watch = require('gulp-watch'),
+    jshint = require('gulp-jshint'),
+    browserify = require('gulp-browserify'),
+    concat = require('gulp-concat'),
+    minifycss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    rev = require('gulp-rev'),
+    clean = require('gulp-clean'),
+    path = require('path'),
 
-  stylesPath = 'public/app/styles/',
-  scriptsPath = 'public/app/scripts/',
+    publicPath = 'public/'
 
-  publicPath = 'public/'
-  publicStylesPath = publicPath + 'styles/'
+    stylesPath = publicPath + 'app/styles/',
+    scriptsPath = publicPath + 'app/scripts/',
+
 
 /* Compile Our Sass */
 gulp.task('sass', function() {
-    return gulp.src(stylesPath + '*.scss', {base: path.join(process.cwd(), 'public/app')})
-      // .pipe(rename({extname: ''}))
-      .pipe(sass())
-      .pipe(rev())
-      // .pipe(rename({extname: '.css'}))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(minifycss())
-      .pipe(gulp.dest(publicPath))
-      .pipe(rev.manifest())
-      .pipe(gulp.dest(publicPath))
-      .pipe(livereload())
+  return gulp.src(stylesPath + '*.scss', { base: path.join(process.cwd(), 'public/app') } )
+    .pipe(sass())
+    .pipe(rev())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest(publicPath))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(publicPath));
 });
 
-// gulp.task('clean', function () {
-//     return gulp.src(publicStylesPath, {read: false})
-//         .pipe(clean());
-// });
+// JSHint task
+gulp.task('lint', function() {
+  gulp.src(scriptsPath + '*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
+
+// Browserify task
+gulp.task('browserify', function() {
+  return gulp.src(scriptsPath + 'main.js', { base: path.join(process.cwd(), 'public/app') } )
+    .pipe(browserify({
+      insertGlobals: true,
+      debug: true
+    }))
+    // Bundle to a single file
+    .pipe(concat('scripts/app.js'))
+    .pipe(rev())
+    .pipe(gulp.dest(publicPath))
+    .pipe(rev.manifest({base: 'public', appendExisting: true }))
+    .pipe(gulp.dest(publicPath))
+});
+
+gulp.task('clean', function() {
+  return gulp.src([publicPath + 'styles/', publicPath + 'scripts/'], {read: false})
+        .pipe(clean());
+})
 
 /* Watch Files For Changes */
-gulp.task('watch', function() {
-    livereload.listen();
-    gulp.watch(stylesPath + '*.scss', ['sass']);
+gulp.task('watch', ['clean', 'lint'], function() {
+  // Watch our scripts
+  gulp.watch([stylesPath + '*.scss', scriptsPath + '*.js'],[
+    'sass',
+    'browserify'
+  ]);
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('build', ['sass', 'browserify'], function() {});
