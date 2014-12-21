@@ -19,13 +19,13 @@ var gulp = require('gulp'),
 /* Compile Our Sass */
 gulp.task('sass', function() {
   return gulp.src(stylesPath + '*.scss', { base: path.join(process.cwd(), 'public/app') } )
-    .pipe(sass())
+    .pipe(sass({errLogToConsole: true}))
     .pipe(rev())
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest(publicPath))
     .pipe(rev.manifest())
-    .pipe(gulp.dest(publicPath));
+    .pipe(gulp.dest(publicPath))
 });
 
 // JSHint task
@@ -53,15 +53,12 @@ gulp.task('browserify', function() {
 gulp.task('clean', function() {
   return gulp.src([publicPath + 'styles/', publicPath + 'scripts/'], {read: false})
         .pipe(clean());
-})
+});
 
 /* Watch Files For Changes */
-gulp.task('watch', ['clean', 'lint'], function() {
+gulp.task('watch', function() {
   // Watch our scripts
-  gulp.watch([stylesPath + '*.scss', scriptsPath + '*.js'],[
-    'sass',
-    'browserify'
-  ]);
+  gulp.watch(stylesPath + '*.scss', ['sass']);
 });
 
 gulp.task('build', ['sass', 'browserify'], function() {});

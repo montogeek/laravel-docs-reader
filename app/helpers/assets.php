@@ -18,5 +18,5 @@ function asset_path($filename) {
         return '/' . $manifest[$filename];
     }
 
-    return $filename;
+    return '/'. $filename;
 }
