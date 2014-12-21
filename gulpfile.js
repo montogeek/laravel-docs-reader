@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     rev = require('gulp-rev'),
     clean = require('gulp-clean'),
+    notify = require("gulp-notify"),
     path = require('path'),
 
     publicPath = 'public/'
@@ -19,7 +20,13 @@ var gulp = require('gulp'),
 /* Compile Our Sass */
 gulp.task('sass', function() {
   return gulp.src(stylesPath + '*.scss', { base: path.join(process.cwd(), 'public/app') } )
-    .pipe(sass({errLogToConsole: true}))
+    .pipe(sass({
+      errLogToConsole: true,
+      onError: function(err) {
+        console.log(err);
+        notify(err);
+      }
+    }))
     .pipe(rev())
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
