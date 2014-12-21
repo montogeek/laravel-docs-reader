@@ -31,8 +31,8 @@ gulp.task('sass', function() {
 // JSHint task
 gulp.task('lint', function() {
   gulp.src(scriptsPath + '*.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 // Browserify task
