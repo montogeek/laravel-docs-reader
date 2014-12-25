@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     rev = require('gulp-rev'),
     clean = require('gulp-clean'),
-    notify = require("gulp-notify"),
+    uglify = require('gulp-uglify'),
     path = require('path'),
 
     publicPath = 'public/'
@@ -18,14 +18,10 @@ var gulp = require('gulp'),
 
 
 /* Compile Our Sass */
-gulp.task('sass', function() {
+gulp.task('css', function() {
   return gulp.src(stylesPath + '*.scss', { base: path.join(process.cwd(), 'public/app') } )
     .pipe(sass({
-      errLogToConsole: true,
-      onError: function(err) {
-        console.log(err);
-        notify(err);
-      }
+      errLogToConsole: true
     }))
     .pipe(rev())
     .pipe(rename({suffix: '.min'}))
@@ -43,7 +39,7 @@ gulp.task('lint', function() {
 });
 
 // Browserify task
-gulp.task('browserify', function() {
+gulp.task('js', function() {
   return gulp.src(scriptsPath + 'main.js', { base: path.join(process.cwd(), 'public/app') } )
     .pipe(browserify({
       insertGlobals: true,
@@ -51,6 +47,7 @@ gulp.task('browserify', function() {
     }))
     // Bundle to a single file
     .pipe(concat('scripts/app.js'))
+    .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest(publicPath))
     .pipe(rev.manifest({base: 'public', appendExisting: true }))
@@ -65,7 +62,7 @@ gulp.task('clean', function() {
 /* Watch Files For Changes */
 gulp.task('watch', function() {
   // Watch our scripts
-  gulp.watch(stylesPath + '*.scss', ['sass']);
+  gulp.watch(stylesPath + '*.scss', ['css']);
 });
 
-gulp.task('build', ['sass', 'browserify'], function() {});
+gulp.task('build', ['css', 'js'], function() {});
