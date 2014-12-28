@@ -19,7 +19,7 @@ var gulp = require('gulp'),
 
 /* Compile Our Sass */
 gulp.task('css', function() {
-  return gulp.src(stylesPath + '*.scss', { base: path.join(process.cwd(), 'public/app') } )
+  return gulp.src(stylesPath + 'main.scss', { base: path.join(process.cwd(), 'public/app') } )
     .pipe(sass({
       errLogToConsole: true
     }))

@@ -1,6 +1,9 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
+/public/scripts
+/public/styles
+/public/rev-manifest.json
 composer.phar
 composer.lock
 .env.*.php
