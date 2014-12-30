@@ -10,15 +10,18 @@
   <nav>
     <div class="row">
       <div class="columns large-12">
-        <a href="//laravel.com">
+        <a href="//laravel.montogeek.co">
           <img src="{{ asset('images/logo-head.png') }}" alt="Laravel">
         </a>
         <ul class="right inline-list">
-          <li>Inicio</li>
-          <li>Github</li>
-          <li>Foro</li>
-          <li>Twitter</li>
-          <li>Ayuda a traducir</li>
+          <li>
+            <a href="//laravel.montogeek.co">Inicio</a>
+          </li>
+          <li>
+            <a href="//github.com/laravel/">Github</a>
+          </li>
+          <li>
+            <a href="https://github.com/montogeek/laravel-docs-es">Ayuda a traducir</li>
         </ul>
       </div>
     </div>
