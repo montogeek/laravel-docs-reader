@@ -21,6 +21,9 @@
             <a href="//github.com/laravel/">Github</a>
           </li>
           <li>
+            <a href="http://laraveles.com/foro/">Foro</a>
+          </li>
+          <li>
             <a href="https://github.com/montogeek/laravel-docs-es">Ayuda a traducir</li>
         </ul>
       </div>
