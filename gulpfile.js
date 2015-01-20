@@ -50,8 +50,8 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest(publicPath))
-    .pipe(rev.manifest({base: 'public', appendExisting: true }))
-    .pipe(gulp.dest(publicPath))
+    .pipe(rev.manifest({base: process.cwd() + '/public', merge: true}))
+    .pipe(gulp.dest('')) // Trick
 });
 
 gulp.task('clean', function() {
