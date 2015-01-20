@@ -50,7 +50,7 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest(publicPath))
-    .pipe(rev.manifest({base: process.cwd() + '/public', merge: true}))
+    .pipe(rev.manifest('public/rev-manifest.json', {merge: true}))
     .pipe(gulp.dest('')) // Trick
 });
 
