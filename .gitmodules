@@ -1,3 +1,4 @@
-[submodule "docs"]
-	path = docs
+[submodule "docs/4.1"]
+	path = docs/4.1
 	url = git@github.com:montogeek/laravel-docs-es.git
+	branch = 4.1

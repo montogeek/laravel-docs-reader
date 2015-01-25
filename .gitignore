@@ -4,6 +4,7 @@
 /public/scripts
 /public/styles
 /public/rev-manifest.json
+.idea
 composer.phar
 composer.lock
 .env.*.php

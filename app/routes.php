@@ -1,4 +1,4 @@
 <?php
 
 Route::get('/', 'HomeController@showWelcome');
-Route::resource('page', 'Page');
+Route::get('{version}/{page}', 'Page');

@@ -1,11 +1,8 @@
 <?php
 class HomeController extends BaseController {
 
-	public function showWelcome()
+	public function showWelcome($version = '4.1')
 	{
-		$md = File::get(base_path()."/docs/documentation.md");
-		$pd = new Parsedown();
-		$documentation = $pd->text($md);
-		return View::make('index', compact('documentation'));
+		return Redirect::action('Page@show', [$version, 'introduction']);
 	}
 }

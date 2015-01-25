@@ -2,17 +2,15 @@
 
 class Page extends \BaseController {
 
-  public function show($id)
+  public function getIndex($version = '4.1', $id)
   {
     $id = ($id === 'undefined') ? 'introduction' : $id;
-    $md = File::get(base_path()."/docs/$id.md");
+    $md = File::get(base_path()."/docs/$version/$id.md");
     $pd = new Parsedown();
+
     $page = $pd->text($md);
-    if(Request::ajax()) {
-      return $page;
-    }
-    $documentation = File::get(base_path()."/docs/documentation.md");
-    $documentation = $pd->text($documentation);
-    return View::make('index', compact('documentation'));
+    $index = $pd->text(File::get(base_path()."/docs/$version/documentation.md"));
+
+    return View::make('index', compact('index', 'page'));
   }
 }

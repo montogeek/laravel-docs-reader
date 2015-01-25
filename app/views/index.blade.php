@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Documentación de Laravel en Español versión 4.1</title>
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}">
-  <script type="text/javascript" src="{{ asset_path('scripts/app.js') }}"></script>
 </head>
 <body>
   <nav>
@@ -31,11 +30,10 @@
   </nav>
 	<div class="row">
 		<div class="columns large-3">
-			{{ $documentation }}
+			{{ $index }}
 		</div>
 		<div class="columns large-9">
-			<div ng-view>
-              </div>
+			{{ $page }}
 		</div>
 	</div>
 </body>
