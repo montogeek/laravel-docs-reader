@@ -27,6 +27,18 @@
         </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="columns large-4">
+        <ul class="left inline-list">
+          <li>
+            {{ link_to_action('Page@getIndex', '5.0', ['5.0', 'introduction']) }}
+          </li>
+          <li>
+            {{ link_to_action('Page@getIndex', '4.1', ['4.1', 'introduction']) }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 	<div class="row">
 		<div class="columns large-3">
