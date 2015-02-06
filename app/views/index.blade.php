@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="es" ng-app="docsApp">
 <head>
-	<meta charset="UTF-8">
-	<title>Documentación de Laravel en Español versión 4.1</title>
+  <meta charset="UTF-8">
+  <title>Documentación de Laravel en Español versión 4.1</title>
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}">
 </head>
 <body>
