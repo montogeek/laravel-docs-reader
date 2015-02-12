@@ -1,14 +1,11 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     watch = require('gulp-watch'),
-    jshint = require('gulp-jshint'),
-    browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
     rev = require('gulp-rev'),
     clean = require('gulp-clean'),
-    uglify = require('gulp-uglify'),
     path = require('path'),
 
     publicPath = 'public/'
@@ -31,31 +28,8 @@ gulp.task('css', function() {
     .pipe(gulp.dest(publicPath))
 });
 
-// JSHint task
-gulp.task('lint', function() {
-  gulp.src(scriptsPath + '*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-});
-
-// Browserify task
-gulp.task('js', function() {
-  return gulp.src(scriptsPath + 'main.js', { base: path.join(process.cwd(), 'public/app') } )
-    .pipe(browserify({
-      insertGlobals: true,
-      debug: true
-    }))
-    // Bundle to a single file
-    .pipe(concat('scripts/app.js'))
-    .pipe(uglify())
-    .pipe(rev())
-    .pipe(gulp.dest(publicPath))
-    .pipe(rev.manifest('public/rev-manifest.json', {merge: true}))
-    .pipe(gulp.dest('')) // Trick
-});
-
 gulp.task('clean', function() {
-  return gulp.src([publicPath + 'styles/', publicPath + 'scripts/'], {read: false})
+  return gulp.src(publicPath + 'styles/', {read: false})
         .pipe(clean());
 });
 
@@ -65,4 +39,4 @@ gulp.task('watch', function() {
   gulp.watch(stylesPath + '*.scss', ['css']);
 });
 
-gulp.task('build', ['css', 'js'], function() {});
+gulp.task('build', ['css'], function() {});
