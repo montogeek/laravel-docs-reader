@@ -20,10 +20,10 @@
         </a>
         <ul class="right inline-list">
           <li>
-            {{ link_to_action('Page@getIndex', '5.0', ['5.0', 'introduction']) }}
+            {{ link_to_action('Page@getIndex', '5.0', ['5.0', 'introduction'], ['class' => ('5.0' !== $version) ?: 'current' ]) }}
           </li>
           <li>
-            {{ link_to_action('Page@getIndex', '4.1', ['4.1', 'introduction']) }}
+            {{ link_to_action('Page@getIndex', '4.1', ['4.1', 'introduction'], ['class' => ('4.1' !== $version) ?: 'current' ]) }}
           </li>
         </ul>
       </div>

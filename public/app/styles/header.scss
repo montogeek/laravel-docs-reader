@@ -28,6 +28,11 @@
       border-radius: 4px;
       color: #FFFFFF;
       padding: 2px 8px;
+
+      &.current {
+        background-color: white;
+        color: #c54232;
+      }
     }
   }
 }

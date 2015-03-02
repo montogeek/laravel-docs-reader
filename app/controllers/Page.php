@@ -2,7 +2,7 @@
 
 class Page extends \BaseController {
 
-  public function getIndex($version = '4.1', $id)
+  public function getIndex($version, $id)
   {
     $id = ($id === 'undefined') ? 'introduction' : $id;
 
@@ -15,6 +15,6 @@ class Page extends \BaseController {
       return Redirect::to('/');
     }
 
-    return View::make('index', compact('index', 'page'));
+    return View::make('index', compact('index', 'page', 'version'));
   }
 }
