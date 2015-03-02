@@ -1,0 +1,10 @@
+/** Code Snippets */
+
+pre > code {
+  display: block;
+  padding: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $code-background-color;
+  border-radius: 4px;
+}

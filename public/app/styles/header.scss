@@ -1,0 +1,51 @@
+/** Header section */
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+.main {
+  background-color: $header-background-color;
+
+  .logo {
+    vertical-align: middle;
+    margin: 10px 0;
+  }
+
+  span {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: 300;
+    vertical-align: middle;
+    margin-left: 10px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ul {
+    margin: 17px 0;
+
+    a {
+      background-color: #c54232;
+      border-radius: 4px;
+      color: #FFFFFF;
+      padding: 2px 8px;
+    }
+  }
+}
+
+.navigation {
+  box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.07);
+
+  ul {
+    margin-bottom: 0;
+
+    a {
+      color: $text-color;
+      padding: 10px 0;
+
+      &.current {
+        border-bottom: 2px solid $active-item-color;
+        color: $active-item-color;
+      }
+    }
+  }
+}
