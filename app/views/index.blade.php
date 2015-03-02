@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Documentación de Laravel en Español versión 5.0 y 4.x</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Fernando Montoya">
+  <meta name="description" content="Laravel - El framework PHP para artesanos de la Web.">
   <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}">
 </head>
 <body>

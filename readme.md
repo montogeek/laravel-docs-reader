@@ -1,1 +1,5 @@
-[Lector de la documentación de Laravel en Español](https://github.com/montogeek/laravel-docs-es)
+# [Lector de la documentación de Laravel en Español](https://github.com/montogeek/laravel-docs-es)
+
+Puedes verlo funcionando en http://laravel.montogeek.co/.
+
+[![Build Status](https://snap-ci.com/montogeek/laravel-docs-es/branch/master/build_image)](https://snap-ci.com/montogeek/laravel-docs-es/branch/master)
