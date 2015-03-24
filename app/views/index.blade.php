@@ -62,5 +62,6 @@
   		</div>
   	</div>
   </section>
+  <script src="/scripts/app.js"></script>
 </body>
 </html>
