@@ -7,8 +7,11 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     clean = require('gulp-clean'),
     path = require('path'),
+    browserify = require('browserify'),
+    transform = require('vinyl-transform'),
+    uglify = require('gulp-uglify'),
 
-    publicPath = 'public/'
+    publicPath = './public/'
 
     stylesPath = publicPath + 'app/styles/',
     scriptsPath = publicPath + 'app/scripts/',
@@ -34,10 +37,16 @@ gulp.task('clean', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src(['node_modules/anchor-js/anchor.js', scriptsPath + 'app.js'])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest(publicPath + 'scripts'))
-});
+    var browserified = transform(function(filename) {
+        var b = browserify({entries: filename, debug: true});
+        return b.bundle();
+    });
+
+    return gulp.src(scriptsPath + 'app.js')
+        .pipe(browserified)
+        .pipe(uglify())
+        .pipe(gulp.dest(publicPath + 'scripts'));
+})
 
 /* Watch Files For Changes */
 gulp.task('watch', function() {
