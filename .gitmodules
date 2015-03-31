@@ -1,8 +1,3 @@
-[submodule "docs/4.1"]
-	path = docs/4.1
-	url = git@github.com:montogeek/laravel-docs-es.git
-	branch = 4.1
-	ignore = dirty
 [submodule "docs/5.0"]
 	path = docs/5.0
 	url = git@github.com:montogeek/laravel-docs-es.git

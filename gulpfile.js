@@ -46,7 +46,7 @@ gulp.task('js', function() {
         .pipe(browserified)
         .pipe(uglify())
         .pipe(gulp.dest(publicPath + 'scripts'));
-})
+});
 
 /* Watch Files For Changes */
 gulp.task('watch', function() {
