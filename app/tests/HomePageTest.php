@@ -21,7 +21,7 @@ class HomePageTest extends TestCase {
 	{
 		$page = $this->client->request('GET', '4.1/introduction');
 
-		$this->assertEquals($page->filter('h1')->text(), 'Introducción');
+		$this->assertEquals($page->filter('h1')->html(), 'Introducción');
 	}
 
 	/**
