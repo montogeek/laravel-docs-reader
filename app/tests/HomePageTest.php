@@ -19,7 +19,7 @@ class HomePageTest extends TestCase {
      */
 	public function testIntroductionPage()
 	{
-		$page = $this->client->request('GET', '4.1/introduction/');
+		$page = $this->client->request('GET', '/4.1/introduction/');
 
 		$this->assertTrue($this->client->getResponse()->isOk());
 
