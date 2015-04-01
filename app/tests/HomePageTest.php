@@ -19,9 +19,9 @@ class HomePageTest extends TestCase {
      */
 	public function testIntroductionPage()
 	{
-		$page = $this->client->request('GET', '4.1/introduction');
+		$page = $this->client->request('GET', '4.1/introduction/');
 
-		$this->assertEquals($page->filter('h1')->html(), 'Introducción');
+		$this->assertCount(1, $page->filter('h1:contains("Introducción")'));
 	}
 
 	/**
