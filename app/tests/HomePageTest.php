@@ -21,6 +21,8 @@ class HomePageTest extends TestCase {
 	{
 		$page = $this->client->request('GET', '4.1/introduction/');
 
+		$this->assertTrue($this->client->getResponse()->isOk());
+
 		$this->assertCount(1, $page->filter('h1:contains("Introducción")'));
 	}
 
