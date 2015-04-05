@@ -1,4 +1,4 @@
-# [Lector de la documentación de Laravel en Español](https://github.com/montogeek/laravel-docs-es)
+# [Lector de la documentación de Laravel PHP Framework en Español](https://github.com/montogeek/laravel-docs-es)
 
 Puedes verlo funcionando en http://laravel.montogeek.co/.
 
