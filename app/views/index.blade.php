@@ -42,9 +42,8 @@
           <li>
             <a href="http://laraveles.com/foro/">Foro</a>
           </li>
-          <li>
-            <a href="https://github.com/montogeek/laravel-docs-es">Ayuda a traducir</a>
         </ul>
+        <a href="https://github.com/montogeek/laravel-docs-es" class="call-to-action">Ayuda a traducir</a>
       </div>
     </div>
   </nav>
