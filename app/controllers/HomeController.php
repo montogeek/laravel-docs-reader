@@ -1,8 +1,10 @@
 <?php
 class HomeController extends BaseController {
 
-	public function getIndex($version = '5.0')
+  const VERSION = '5.1';
+
+	public function getIndex()
 	{
-		return Redirect::action('Page@getIndex', [$version, 'introduction']);
+		return Redirect::action('Page@getIndex', [self::VERSION]);
 	}
 }
