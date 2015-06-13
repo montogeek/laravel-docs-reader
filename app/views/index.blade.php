@@ -20,6 +20,9 @@
         </a>
         <ul class="right inline-list">
           <li>
+            {{ link_to_action('Page@getIndex', '5.1', ['5.1', 'installation'], ['class' => ('5.1' !== $version) ?: 'current' ]) }}
+          </li>
+          <li>
             {{ link_to_action('Page@getIndex', '5.0', ['5.0', 'introduction'], ['class' => ('5.0' !== $version) ?: 'current' ]) }}
           </li>
           <li>
