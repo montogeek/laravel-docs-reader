@@ -8,7 +8,7 @@ class Page extends \BaseController {
 
     if(File::exists(base_path()."/docs/$version/$id.md")) {
       $page_source = File::get(base_path()."/docs/$version/$id.md");
-      $pd = new Parsedown();
+      $pd = new ParsedownExtra();
       $page = $pd->text($page_source);
       $index = $pd->text(File::get(base_path()."/docs/$version/documentation.md"));
     } else {
