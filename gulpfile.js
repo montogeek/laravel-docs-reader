@@ -47,7 +47,7 @@ gulp.task('js', function() {
         .pipe(uglify())
         .pipe(gulp.dest(publicPath + 'scripts'));
 
-    gulp.src(scriptsPath + 'sw.js')
+    gulp.src([scriptsPath + 'sw.js', scriptsPath + 'serviceworker-cache-polyfill.js'])
         .pipe(gulp.dest(publicPath));
 });
 

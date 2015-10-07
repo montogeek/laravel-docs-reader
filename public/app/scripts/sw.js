@@ -3,7 +3,7 @@
 importScripts('/serviceworker-cache-polyfill.js');
 
 var CACHE_NAME = 'laraveldocsreader';
-var CACHE_VERSION = '0.0.3';
+var CACHE_VERSION = '0.0.4';
 var urlsToCache = ['/',
     '/styles/main.min.css',
     '/images/arrow.svg'
