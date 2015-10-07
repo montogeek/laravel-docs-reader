@@ -7,6 +7,7 @@
   <meta name="author" content="Fernando Montoya">
   <meta name="description" content="Laravel - El framework PHP para artesanos de la Web.">
   <link rel="stylesheet" type="text/css" href="/styles/main.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
 </head>
 <body>
   <nav class="main">
