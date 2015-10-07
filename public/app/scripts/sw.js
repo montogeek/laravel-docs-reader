@@ -3,7 +3,7 @@
 importScripts('/serviceworker-cache-polyfill.js');
 
 var CACHE_NAME = 'laraveldocsreader';
-var CACHE_VERSION = '0.0.2';
+var CACHE_VERSION = '0.0.3';
 var urlsToCache = ['/',
     '/styles/main.min.css',
     '/images/arrow.svg'
@@ -24,6 +24,9 @@ this.addEventListener('activate', function(eve) {
     var currentCacheName = CACHE_NAME + '-v' + CACHE_VERSION;
     caches.keys().then(function(cacheNames) {
         return Promise.all(cacheNames.map(function(cacheName) {
+            if (cacheName.indexOf(CACHE_NAME) == -1) {
+                return;
+            }
             if (cacheName != currentCacheName) {
                 return caches.delete(cacheName);
             }
