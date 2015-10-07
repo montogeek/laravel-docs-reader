@@ -7,7 +7,7 @@
   <meta name="author" content="Fernando Montoya">
   <meta name="description" content="Laravel - El framework PHP para artesanos de la Web.">
   {{-- <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}"> --}}
-  {{ HTML::style('styles/main.min.css'); }}
+  {{ HTML::style('styles/main.min.css', array(), true); }}
 </head>
 <body>
   <nav class="main">
