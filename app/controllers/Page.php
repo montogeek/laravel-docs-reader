@@ -12,7 +12,7 @@ class Page extends \BaseController {
       $page = $this->replaceVersionPlaceholder($version, $pd->text($page_source));
       $index = $this->replaceVersionPlaceholder($version, $pd->text(File::get(base_path()."/docs/$version/documentation.md")));
     } else {
-      return Redirect::to('/');
+      return Redirect::secure('/');
     }
 
     return View::make('index', compact('index', 'page', 'version', 'supportedVersions'));

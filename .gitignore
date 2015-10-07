@@ -2,6 +2,8 @@
 /vendor
 /docs
 /node_modules
+/public/serviceworker-cache-polyfill.js
+/public/sw.js
 .idea
 public/rev-manifest.json
 composer.phar

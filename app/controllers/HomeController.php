@@ -5,6 +5,6 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-		return Redirect::action('Page@getIndex', [self::VERSION]);
+    return Redirect::secure(self::VERSION);
 	}
 }
