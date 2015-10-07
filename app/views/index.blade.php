@@ -65,7 +65,7 @@
   <script>
   if (navigator.serviceWorker) {
     navigator.serviceWorker
-      .register('/scripts/sw.js', { scope: '/' })
+      .register('/sw.js', { scope: '/' })
       .then(function(registration) {
         var isUpdate = false;
         if (registration.active) { isUpdate = true; }

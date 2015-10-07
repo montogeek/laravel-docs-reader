@@ -48,7 +48,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest(publicPath + 'scripts'));
 
     gulp.src(scriptsPath + 'sw.js')
-        .pipe(gulp.dest(publicPath + 'scripts'));
+        .pipe(gulp.dest(publicPath));
 });
 
 /* Watch Files For Changes */
