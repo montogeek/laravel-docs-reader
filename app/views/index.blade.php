@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Fernando Montoya">
   <meta name="description" content="Laravel - El framework PHP para artesanos de la Web.">
-  {{-- <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}"> --}}
-  {{ HTML::style('styles/main.min.css', array(), true); }}
+  <link rel="stylesheet" type="text/css" href="/styles/main.min.css">
 </head>
 <body>
   <nav class="main">
