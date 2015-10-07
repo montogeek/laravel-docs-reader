@@ -2,8 +2,6 @@
 /vendor
 /docs
 /node_modules
-/public/scripts
-/public/styles
 .idea
 public/rev-manifest.json
 composer.phar
