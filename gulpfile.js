@@ -23,11 +23,11 @@ gulp.task('css', function() {
         .pipe(sass({
           errLogToConsole: true
         }))
-        .pipe(rev())
+        // .pipe(rev())
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest(publicPath))
-        .pipe(rev.manifest())
+        // .pipe(rev.manifest())
         .pipe(gulp.dest(publicPath))
 });
 
@@ -42,9 +42,12 @@ gulp.task('js', function() {
         return b.bundle();
     });
 
-    return gulp.src(scriptsPath + 'app.js')
+    gulp.src(scriptsPath + 'app.js')
         .pipe(browserified)
         .pipe(uglify())
+        .pipe(gulp.dest(publicPath + 'scripts'));
+
+    gulp.src(scriptsPath + 'sw.js')
         .pipe(gulp.dest(publicPath + 'scripts'));
 });
 

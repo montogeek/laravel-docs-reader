@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Fernando Montoya">
   <meta name="description" content="Laravel - El framework PHP para artesanos de la Web.">
-  <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}">
+  {{-- <link rel="stylesheet" type="text/css" href="{{ asset_path('styles/main.css') }}"> --}}
+  {{ HTML::style('styles/main.min.css'); }}
 </head>
 <body>
   <nav class="main">
@@ -61,5 +62,33 @@
   	</div>
   </section>
   <script src="/scripts/app.js"></script>
+  <script>
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker
+      .register('/scripts/sw.js', { scope: '/' })
+      .then(function(registration) {
+        var isUpdate = false;
+        if (registration.active) { isUpdate = true; }
+        registration.onupdatefound = function(eve) {
+          console.log('A new Service Worker version has been found...');
+        };
+        registration.installing.onstatechange = function(eve) {
+          if (this.state === 'installed') {
+            console.log('Service Worker Installed.');
+            if (isUpdate) {
+              console.log('App updated. Restart for the new version.');
+            } else {
+              console.log('App ready for offline use.');
+            }
+          } else {
+            console.log('New Service Worker state: ', this.state);
+          }
+        };
+        console.log('Registration succeeded. Scope is: ' + registration.scope);
+      }).catch(function(error) {
+        console.log('Registration failed with: ' + error);
+      });
+  };
+  </script>
 </body>
 </html>
