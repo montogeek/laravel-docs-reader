@@ -22,7 +22,7 @@
         <ul class="right inline-list">
           @foreach ($supportedVersions as $supportedVersion)
             <li>
-              {{ link_to_action('Page@getIndex', $supportedVersion, [$supportedVersion], ['class' => ($supportedVersion !== $version) ?: 'current' ]) }}
+              <a href="{{ secure_url(action('Page@getIndex', [$supportedVersion])) }}" class="{{ ($supportedVersion !== $version) ? '' : 'current' }}">{{ $supportedVersion }}</a>
             </li>
           @endforeach
         </ul>
